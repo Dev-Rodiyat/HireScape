@@ -1,6 +1,4 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 
 const About = () => {
   return (
@@ -12,7 +10,7 @@ const About = () => {
               About HireScape
             </h1>
             <p className="mt-4 text-xl text-gray-600">
-              Connecting Employees with Skilled Job Seekers
+              Empowering Talent. Connecting Opportunities.
             </p>
           </div>
         </div>
@@ -23,9 +21,9 @@ const About = () => {
           <div className="lg:text-center">
             <h2 className="text-3xl font-bold text-indigo-600">Our Mission</h2>
             <p className="mt-4 text-lg text-gray-600">
-              HireScape aims to revolutionize the way jobs are posted and fulfilled.
-              We provide a secure, efficient platform that connects individuals seeking services
-              with skilled professionals ready to get the job done.
+              HireScape is a Web 2 job listing platform built to streamline the hiring process. 
+              We help companies find the right talent faster while empowering job seekers 
+              to discover meaningful opportunities with ease.
             </p>
           </div>
         </div>
@@ -35,26 +33,26 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-lg shadow">
-              <h3 className="text-xl font-semibold text-gray-900">Secure Platform</h3>
+              <h3 className="text-xl font-semibold text-gray-900">User-Friendly Interface</h3>
               <p className="mt-4 text-gray-600">
-                Advanced security measures including KYC verification and secure payment systems
-                to protect our users.
+                Designed with simplicity and accessibility in mind, our platform makes it easy for
+                anyone to post jobs or apply in just a few clicks.
               </p>
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow">
-              <h3 className="text-xl font-semibold text-gray-900">Smart Contracts</h3>
+              <h3 className="text-xl font-semibold text-gray-900">Robust Job Management</h3>
               <p className="mt-4 text-gray-600">
-                Blockchain-powered smart contracts ensure transparent and automated
-                payment processing.
+                Employers can manage job listings, track applicants, and update statuses, all in one
+                centralized dashboard.
               </p>
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow">
-              <h3 className="text-xl font-semibold text-gray-900">Verified Users</h3>
+              <h3 className="text-xl font-semibold text-gray-900">Verified Accounts</h3>
               <p className="mt-4 text-gray-600">
-                Comprehensive verification system ensures trust and reliability
-                between job posters and professionals.
+                Account verification and moderation tools help ensure authentic listings and trusted
+                user interactions.
               </p>
             </div>
           </div>
@@ -67,7 +65,7 @@ const About = () => {
             Our Values
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {['Trust', 'Innovation', 'Excellence', 'Security'].map((value) => (
+            {['Integrity', 'Efficiency', 'Accessibility', 'Growth'].map((value) => (
               <div key={value} className="text-center">
                 <h3 className="text-xl font-semibold text-indigo-600 mb-4">{value}</h3>
                 <p className="text-gray-600">

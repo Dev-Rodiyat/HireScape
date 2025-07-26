@@ -22,13 +22,13 @@ const HeroSection = () => {
       <div className="relative z-10 flex items-center justify-center min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
-            <span className="block">Get Tasks Done with</span>
+            <span className="block">Get HireScape Done with</span>
             <span className="block text-indigo-400">
               Professional Excellence
             </span>
           </h1>
           <p className="mt-3 text-base text-gray-200 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl">
-            Connect with skilled professionals ready to tackle your tasks. From
+            Connect with skilled professionals ready to tackle your jobs. From
             small errands to complex projects, we've got you covered.
           </p>
 
