@@ -1,23 +1,27 @@
 require("dotenv").config();
-const mongoose = require("mongoose");
-const connectDb = require("./config/db");
 const express = require("express");
+const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
+
+const connectDb = require("./config/db");
 const errorHandler = require("./middleware/errorMiddleware");
+
 const userRoute = require("./route/userRoute");
 const jobRoute = require("./route/jobRoute");
 const applicationRoute = require("./route/applicationRoute");
 const notificationRoute = require("./route/notificationRoute");
 
 const app = express();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5000;
 
+// Parse incoming data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-const allowedOrigins = process.env.CLIENT_URL
+// CORS Setup
+const allowedOrigins = process.env.CLIENT_URL?.split(',');
 
 app.use(cors({
   origin: function (origin, callback) {
@@ -31,23 +35,24 @@ app.use(cors({
   methods: 'GET,POST,PUT,PATCH,DELETE,OPTIONS',
 }));
 
-// app.use((req, res, next) => {
-//   console.log("Origin:", req.headers.origin);
-//   next();
-// });
-
+// Routes
 app.use("/user", userRoute);
-app.use('/job', jobRoute);
-app.use('/application', applicationRoute);
+app.use("/job", jobRoute);
+app.use("/application", applicationRoute);
 app.use("/notification", notificationRoute);
 
-app.get('/', (req, res) => console.log('Success'));
+// Root Test Route
+app.get("/", (req, res) => {
+  res.send("HireScape API is running.");
+});
 
+// Error handler
 app.use(errorHandler);
 
+// Connect DB and start server
 connectDb();
 
-mongoose.connection.once('open', () => {
-    console.log('DataBase Connected!');
-    app.listen(PORT, () => console.log(`Server is running on port ${PORT}`))
-})
+mongoose.connection.once("open", () => {
+  console.log("MongoDB Connected ✅");
+  app.listen(PORT, () => console.log(`Server running on port ${PORT} 🚀`));
+});

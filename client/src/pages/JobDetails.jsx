@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import api from "../app/api";
 import ClipLoader from "react-spinners/ClipLoader";
+import axios from "axios";
 
 const JobDetails = () => {
   const { id } = useParams();
@@ -19,7 +20,7 @@ const JobDetails = () => {
   useEffect(() => {
     const fetchJobDetails = async () => {
       try {
-        const res = await api.get(`/job/get-job/${id}`);
+        const res = await axios.get(`${import.meta.env.VITE_SERVER_URL}/job/get-job/${id}`);
         setJob(res.data);
       } catch (err) {
         console.error("Failed to fetch job details:", err);

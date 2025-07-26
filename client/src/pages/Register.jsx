@@ -42,7 +42,7 @@ const Register = () => {
         toast.success('Registration successful');
 
         if (role === 'employer') {
-          navigate('/employers/dashboard');
+          navigate('/employer/dashboard');
         } else if (role === 'jobseeker') {
           navigate('/applicant/dashboard');
         } else {

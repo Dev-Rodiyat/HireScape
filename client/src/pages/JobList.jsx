@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Search } from "lucide-react";
 import JobCard from "../components/JobCard";
 import api from "../app/api";
+import axios from "axios";
 
 const JobList = () => {
     const [searchQuery, setSearchQuery] = useState("");
@@ -10,7 +11,7 @@ const JobList = () => {
     useEffect(() => {
         const fetchJobs = async () => {
             try {
-                const res = await api.get("/job/get-all-jobs");
+                const res = await axios.get(`${import.meta.env.VITE_SERVER_URL}/job/get-all-jobs`);
                 setJobs(res.data);
             } catch (err) {
                 console.error("Error fetching jobs:", err);

@@ -2,14 +2,19 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import ConfirmModal from './ConfirmModal';
 import { logoutUser } from '../redux/auth/authThunk';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const LogoutButton = () => {
   const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);
+  const navigate = useNavigate()
 
   const handleConfirmLogout = () => {
     dispatch(logoutUser());
     setShowModal(false);
+    navigate('/')
+    toast.success('Logged out successfully')
   };
 
   return (
