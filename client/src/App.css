@@ -1,0 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  outline: none;
+}
+
+.btn-icon {
+  @apply p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition;
+}
