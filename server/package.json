@@ -3,10 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-  "scripts": {
-    "dev": "nodemon server.js",
-    "start": "node server.js",
-    "build": "echo 'No build step required'"
+   "scripts": {
+    "dev": "nodemon server"
   },
   "keywords": [],
   "author": "",
