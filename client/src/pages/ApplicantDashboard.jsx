@@ -48,8 +48,6 @@ const ApplicantDashboard = () => {
         return <div className="p-10 text-center text-gray-600">Loading dashboard...</div>;
     }
 
-      console.log(savedJobs)
-
     return (
         <div className="min-h-screen bg-gray-50 py-10 px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto">

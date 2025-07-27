@@ -12,7 +12,6 @@ const EmployerDashboard = () => {
         const fetchDashboard = async () => {
             try {
                 const res = await api.get("/user/dashboard");
-                console.log({ res })
                 setDashboardData(res.data);
             } catch (error) {
                 console.error("Error fetching dashboard:", error.response?.data?.message || error.message);

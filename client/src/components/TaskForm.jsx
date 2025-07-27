@@ -31,7 +31,6 @@ const TaskForm = () => {
     
     await new Promise(resolve => setTimeout(resolve, 1000));
     
-    console.log(formData);
     setSuccess(true);
     setLoading(false);
   };

@@ -13,7 +13,7 @@ const Navbar = () => {
   const location = useLocation();
   const dispatch = useDispatch();
   const { user } = useSelector(state => state.auth);
-console.log({user})
+
   const isActive = (path) => location.pathname === path;
 
   const navLinkClass = (path) =>
