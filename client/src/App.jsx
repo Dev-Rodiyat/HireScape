@@ -16,10 +16,12 @@ import EmployerAnalytics from './pages/EmployerAnalytics';
 import { getCurrentUser } from './redux/auth/authThunk';
 import { useDispatch } from 'react-redux';
 import JobDetails from './pages/JobDetails';
+import NotFound from './pages/NotFound';
+import ScrollToTop from './components/ScrollToTop';
 
 
 const App = () => {
-   const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   // useEffect(() => {
   //   dispatch(getCurrentUser());
@@ -28,6 +30,7 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route path='/' element={<Home />} />
@@ -38,7 +41,6 @@ const App = () => {
             <Route path='/jobs' element={<JobList />} />
             <Route path='/job/:id' element={<JobDetails />} />
             <Route path='/faq' element={<FAQ />} />
-            {/* <Route path='/jobs' element={<JobList/>}/> */}
 
             <Route path='/create-job' element={<AddJob />} />
             <Route path="/employer/dashboard" element={<EmployerDashboard />} />
@@ -46,6 +48,8 @@ const App = () => {
 
             <Route path="/applicant/dashboard" element={<ApplicantDashboard />} />
             <Route path="/applicant/analytics" element={<ApplicantAnalytics />} />
+
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </BrowserRouter>
